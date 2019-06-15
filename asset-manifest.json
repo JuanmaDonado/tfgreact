@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/tfgreact/static/css/main.6b171aae.chunk.css",
+    "main.js": "/tfgreact/static/js/main.a245a5f4.chunk.js",
+    "main.js.map": "/tfgreact/static/js/main.a245a5f4.chunk.js.map",
+    "runtime~main.js": "/tfgreact/static/js/runtime~main.7f050bea.js",
+    "runtime~main.js.map": "/tfgreact/static/js/runtime~main.7f050bea.js.map",
+    "static/css/2.ab7e5612.chunk.css": "/tfgreact/static/css/2.ab7e5612.chunk.css",
+    "static/js/2.38db8605.chunk.js": "/tfgreact/static/js/2.38db8605.chunk.js",
+    "static/js/2.38db8605.chunk.js.map": "/tfgreact/static/js/2.38db8605.chunk.js.map",
+    "index.html": "/tfgreact/index.html",
+    "precache-manifest.c70b709a48001c127177d4d1dc0425d4.js": "/tfgreact/precache-manifest.c70b709a48001c127177d4d1dc0425d4.js",
+    "service-worker.js": "/tfgreact/service-worker.js",
+    "static/css/2.ab7e5612.chunk.css.map": "/tfgreact/static/css/2.ab7e5612.chunk.css.map",
+    "static/css/main.6b171aae.chunk.css.map": "/tfgreact/static/css/main.6b171aae.chunk.css.map"
+  }
+}

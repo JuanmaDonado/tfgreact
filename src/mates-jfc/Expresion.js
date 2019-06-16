@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { Parser } from "expr-eval";
 import Variable from "./Variable";
 

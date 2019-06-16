@@ -1,3 +1,4 @@
+/* eslint-disable */
 class Variable {
   constructor(simbolo, valor = undefined) {
     this._simbolo = "x";

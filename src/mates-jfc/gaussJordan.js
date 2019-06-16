@@ -1,3 +1,4 @@
+/* eslint-disable */
 /**
  * Gauss-Jordan elimination
  */

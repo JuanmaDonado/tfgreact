@@ -1,3 +1,4 @@
+/* eslint-disable */
 import Variable from "./Variable";
 
 // Variable donde el valor no puede ser undefined

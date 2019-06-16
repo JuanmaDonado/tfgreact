@@ -1,3 +1,4 @@
+/* eslint-disable */
 import Expresion from "./Expresion";
 
 class Ecuacion {

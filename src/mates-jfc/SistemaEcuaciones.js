@@ -1,3 +1,4 @@
+/* eslint-disable */
 import Variable from "./Variable";
 import gaussJordan from "./gaussJordan";
 

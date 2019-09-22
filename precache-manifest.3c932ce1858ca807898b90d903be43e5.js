@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a378d48f236b925c404410b216051c97",
+    "revision": "d2f1caaab59101e0a8e52d927ef5a331",
     "url": "/tfgreact/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/tfgreact/static/css/2.ab7e5612.chunk.css"
   },
   {
-    "revision": "dac622c5a111457d5344",
+    "revision": "ee395e20604549c2a8ae",
     "url": "/tfgreact/static/css/main.6b171aae.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/tfgreact/static/js/2.5f61fcd0.chunk.js"
   },
   {
-    "revision": "dac622c5a111457d5344",
-    "url": "/tfgreact/static/js/main.682682f1.chunk.js"
+    "revision": "ee395e20604549c2a8ae",
+    "url": "/tfgreact/static/js/main.0628ed50.chunk.js"
   },
   {
     "revision": "8f4409a23d241efe64ec",

@@ -11,7 +11,7 @@ const { Text } = Typography;
 
 function Variable(props) {
   function handleChange(number) {
-    props.doCambiarVariable(props.tipo, props.variableAsId, parseInt(number));
+    props.doCambiarVariable(props.tipo, props.variableAsId, parseFloat(number));
   }
 
   function handleClick() {
@@ -23,7 +23,7 @@ function Variable(props) {
         <Text>{props.nombre}</Text>
       </Form.Item>
       <Form.Item>
-        <InputNumber value={props.valor} onChange={handleChange} />
+        <InputNumber step={0.001} value={props.valor} onChange={handleChange} />
       </Form.Item>
       <Form.Item>
         <Button onClick={handleClick}>

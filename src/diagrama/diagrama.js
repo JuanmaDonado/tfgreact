@@ -19,7 +19,10 @@ export default function crearDiagrama(container) {
     drawGrid: true,
     defaultRouter: { name: "manhattan" },
     linkPinning: false,
-    interactive: { vertexAdd: false }
+    //interactive: { useLinkTools: true, vertexAdd: false },
+    defaultLink: new joint.dia.Link({
+      attrs: { ".marker-target": { d: "M 10 0 L 0 5 L 10 10 z" } }
+    })
   });
 
   graph.on("add", cell => {

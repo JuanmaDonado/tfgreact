@@ -2,7 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 import { Modal, Table, Typography } from "antd";
 import { solveEstado } from "../solver/solver";
-import * as R from "ramda";
 
 const { Text } = Typography;
 
@@ -42,7 +41,7 @@ function VentanaResultados(props) {
   );
 }
 
-function dataRowFromSolucion(equipos, incognitas, solucion) {
+/* function dataRowFromSolucion(equipos, incognitas, solucion) {
   return {
     key: solucion.id,
     nombre: incognitas[solucion.id].nombre,
@@ -60,7 +59,7 @@ function findNombreDeEquipo(equipos, idIncognita) {
       return "";
     }
   }
-}
+} */
 
 function mapStateToProps(state) {
   let haySolucion = true;
@@ -70,10 +69,22 @@ function mapStateToProps(state) {
   try {
     const mapaSoluciones = solveEstado(state.entities);
     const { equipos, incognitas } = state.entities;
-    dataSource = R.pipe(
+
+    for (let idEquipo in equipos) {
+      for (let idIncognita of equipos[idEquipo].incognitas) {
+        let dataRow = {
+          key: idIncognita,
+          nombre: incognitas[idIncognita].nombre,
+          equipo: equipos[idEquipo].nombre,
+          resultado: mapaSoluciones[idIncognita].solucion
+        };
+        dataSource.push(dataRow);
+      }
+    }
+    /*     dataSource = R.pipe(
       R.map(R.partial(dataRowFromSolucion, [equipos, incognitas])),
       R.values
-    )(mapaSoluciones);
+    )(mapaSoluciones); */
   } catch (error) {
     errorMsg = error;
     haySolucion = false;

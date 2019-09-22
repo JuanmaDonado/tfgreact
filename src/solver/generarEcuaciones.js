@@ -7,13 +7,21 @@ export function generarMapaEquipos(equipos, mapaIds) {
   for (let idEquipo in equipos) {
     let { ecuaciones, datos, incognitas } = equipos[idEquipo];
 
-    ecuaciones.forEach(idEcuacion => {
+    for (let idEcuacion of ecuaciones) {
       let arrayDeVariables = [...datos, ...incognitas];
       mapaEquipos = {
         ...mapaEquipos,
         [idEcuacion]: generarMapaEquipo(arrayDeVariables, mapaIds)
       };
-    });
+    }
+
+    /*     ecuaciones.forEach(idEcuacion => {
+      let arrayDeVariables = [...datos, ...incognitas];
+      mapaEquipos = {
+        ...mapaEquipos,
+        [idEcuacion]: generarMapaEquipo(arrayDeVariables, mapaIds)
+      };
+    }); */
   }
 
   return mapaEquipos;

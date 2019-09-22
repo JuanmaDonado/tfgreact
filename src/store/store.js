@@ -1,5 +1,4 @@
-import { createStore, combineReducers, applyMiddleware } from "redux";
-import { createLogger } from "redux-logger";
+import { createStore, combineReducers } from "redux";
 import equiposReducer from "../reducers/equiposReducer";
 import enlacesReducer from "../reducers/enlacesReducer";
 import datosReducer from "../reducers/datosReducer";
@@ -22,8 +21,6 @@ export const rootReducer = combineReducers({
   })
 });
 
-const logger = createLogger();
-
-let store = createStore(rootReducer, undefined, applyMiddleware(logger));
+let store = createStore(rootReducer, undefined);
 
 export default store;

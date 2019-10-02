@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>Tutorial: Estructura de la Store - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <h2><a href="index.html">Home</a></h2><h3>Tutorials</h3><ul><li><a href="tutorial-Componentes.html">Componentes</a></li><li><a href="tutorial-Estructura de la Store.html">Estructura de la Store</a></li></ul><h3>Global</h3><ul><li><a href="global.html#doAddDato">doAddDato</a></li><li><a href="global.html#doAddEcuacion">doAddEcuacion</a></li><li><a href="global.html#doAddEquipo">doAddEquipo</a></li><li><a href="global.html#doAddIncognita">doAddIncognita</a></li><li><a href="global.html#doAddRelacion">doAddRelacion</a></li><li><a href="global.html#doBorrarDato">doBorrarDato</a></li><li><a href="global.html#doBorrarEcuacion">doBorrarEcuacion</a></li><li><a href="global.html#doBorrarEnlace">doBorrarEnlace</a></li><li><a href="global.html#doBorrarEquipo">doBorrarEquipo</a></li><li><a href="global.html#doBorrarIncognita">doBorrarIncognita</a></li><li><a href="global.html#doBorrarRelacion">doBorrarRelacion</a></li><li><a href="global.html#doCambiarDato">doCambiarDato</a></li><li><a href="global.html#doCambiarSeleccion">doCambiarSeleccion</a></li><li><a href="global.html#doCambiarValorInicial">doCambiarValorInicial</a></li><li><a href="global.html#doConectarEnlace">doConectarEnlace</a></li><li><a href="global.html#doToggleDrawer">doToggleDrawer</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">Tutorial: Estructura de la Store</h1>
+    
+
+    <section>
+
+<header>
+    
+
+    <h2>Estructura de la Store</h2>
+</header>
+
+<article>
+    <p>A continuación se muestra un estado de ejemplo de la Store de Redux, para ilustrar su estructura. Como se puede observar, cuando un objeto &quot;tiene&quot; otro, por ejemplo, un equipo tiene un dato, en el equipo se guarda el ID del dato, y el dato se almacena en su propio objeto dentro de &quot;entities&quot;. Este método se llama &quot;normalizar el estado&quot; y se explica en la <a href="https://redux.js.org/recipes/structuring-reducers/normalizing-state-shape">documentación de Redux.</a></p>
+<pre class="prettyprint source lang-javascript"><code>{
+  seleccionado: '04e60748-4e2d-45ad-bc38-6fc2ae72aa22',
+  isDrawerOpen: false,
+  entities: {
+    equipos: {
+      'cee243eb-1506-4201-93d5-76a485aadd97': {
+        id: 'cee243eb-1506-4201-93d5-76a485aadd97',
+        nombre: 'A',
+        datos: [
+          '829b6d73-29cd-413c-b4b5-1a89194cd010'
+        ],
+        incognitas: [
+          'b9af9ec6-aa5d-41c6-87a3-fc4f5de2a4a4'
+        ],
+        ecuaciones: [
+          '61ee341e-9d54-43db-a7a2-4e404c5d5f55'
+        ]
+      },
+      'f9a52737-0aef-4690-9a9f-370d552d599b': {
+        id: 'f9a52737-0aef-4690-9a9f-370d552d599b',
+        nombre: 'B',
+        datos: [
+          'cb5ced2d-eb7c-4dc9-8155-dad9c7941a84'
+        ],
+        incognitas: [
+          'ec30ca2c-18bc-4913-8dec-bc0dc252ce31',
+          '0018a336-7268-4296-83b8-637ac1e993ef'
+        ],
+        ecuaciones: [
+          '39999755-58a5-4018-b08e-a1fa9772d6e1'
+        ]
+      }
+    },
+    enlaces: {
+      '04e60748-4e2d-45ad-bc38-6fc2ae72aa22': {
+        id: '04e60748-4e2d-45ad-bc38-6fc2ae72aa22',
+        origen: 'cee243eb-1506-4201-93d5-76a485aadd97',
+        destino: 'f9a52737-0aef-4690-9a9f-370d552d599b',
+        relaciones: [
+          'de9d43ad-0e7c-4fe3-a667-a9ea4495a9b9'
+        ]
+      }
+    },
+    datos: {
+      '829b6d73-29cd-413c-b4b5-1a89194cd010': {
+        id: '829b6d73-29cd-413c-b4b5-1a89194cd010',
+        nombre: 'dat1',
+        valor: 0
+      },
+      'cb5ced2d-eb7c-4dc9-8155-dad9c7941a84': {
+        id: 'cb5ced2d-eb7c-4dc9-8155-dad9c7941a84',
+        nombre: 'dat2',
+        valor: 0
+      }
+    },
+    incognitas: {
+      'b9af9ec6-aa5d-41c6-87a3-fc4f5de2a4a4': {
+        id: 'b9af9ec6-aa5d-41c6-87a3-fc4f5de2a4a4',
+        nombre: 'inc1',
+        valorInicial: 1
+      },
+      'ec30ca2c-18bc-4913-8dec-bc0dc252ce31': {
+        id: 'ec30ca2c-18bc-4913-8dec-bc0dc252ce31',
+        nombre: 'inc2',
+        valorInicial: 1
+      },
+      '0018a336-7268-4296-83b8-637ac1e993ef': {
+        id: '0018a336-7268-4296-83b8-637ac1e993ef',
+        nombre: 'inc3',
+        valorInicial: 1
+      }
+    },
+    ecuaciones: {
+      '61ee341e-9d54-43db-a7a2-4e404c5d5f55': {
+        id: '61ee341e-9d54-43db-a7a2-4e404c5d5f55',
+        valor: 'dat1=inc1'
+      },
+      '39999755-58a5-4018-b08e-a1fa9772d6e1': {
+        id: '39999755-58a5-4018-b08e-a1fa9772d6e1',
+        valor: 'dat2=inc2'
+      }
+    },
+    relaciones: {
+      'de9d43ad-0e7c-4fe3-a667-a9ea4495a9b9': [
+        '829b6d73-29cd-413c-b4b5-1a89194cd010',
+        '0018a336-7268-4296-83b8-637ac1e993ef'
+      ]
+    }
+  }
+}
+</code></pre>
+</article>
+
+</section>
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Wed Oct 02 2019 18:33:48 GMT+0200 (GMT+02:00) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>

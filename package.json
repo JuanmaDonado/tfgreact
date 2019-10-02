@@ -5,6 +5,7 @@
   "homepage": "https://juanmadonado.github.io/tfgreact",
   "dependencies": {
     "antd": "^3.19.3",
+    "docdash": "^1.1.1",
     "expr-eval": "^1.2.2",
     "gh-pages": "^2.0.1",
     "jointjs": "^3.0.0",
@@ -22,7 +23,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "docs": "jsdoc -c jsdoc.json"
   },
   "eslintConfig": {
     "extends": "react-app"

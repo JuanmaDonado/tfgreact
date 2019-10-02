@@ -1,0 +1,13 @@
+{
+  "tags": {
+    "allowUnknownTags": true
+  },
+  "source": {
+    "include": ["src/actions-creators"]
+  },
+  "opts": {
+    "template": "node_modules/docdash",
+    "destination": "./docs/",
+    "tutorials": "tutorials/"
+  }
+}
